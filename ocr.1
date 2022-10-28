@@ -1,0 +1,26 @@
+.Dd October 27, 2022
+.Dt OCR 1
+.Os Darwin
+.Sh NAME
+.Nm ocr
+.Nd macOS optical character recognition via the command line
+.Sh SYNOPSIS
+.Nm
+.Op Fl hv
+.Sh DESCRIPTION
+.Nm
+is a command line interface for the built-in optical character recognition
+capabilities in macOS.
+.Pp
+The following flags are supported:
+.Bl -tag -width -indent
+.It Fl h -help
+Print help and exit.
+.It Fl v -version
+Print program name and version, and exit.
+.El
+.Pp
+Returns 0 on success and greater than 0 on error or failure.
+.Sh AUTHORS
+.An Sveinbjorn Thordarson <sveinbjorn@sveinbjorn.org>
+.An David Phillip Oster
