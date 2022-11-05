@@ -5,7 +5,7 @@
 
 # ocr
 
-<--<img src="icon.png" width="168" height="168" alt="ocr" style="float: right; margin-left: 20px; margin-bottom: 20px;" align="right">-->
+[//]: # (<img src="icon.png" width="168" height="168" alt="ocr" style="float: right; margin-left: 20px; margin-bottom: 20px;" align="right">)
 
 *This project is a work in progress. Nothing works. Binaries still unavailable.*
 
