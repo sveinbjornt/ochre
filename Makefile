@@ -1,7 +1,7 @@
 # Makefile for Sloth app
 
-XCODE_PROJ := "ocr.xcodeproj"
-PROGRAM_NAME := "ocr"
+XCODE_PROJ := "ochre.xcodeproj"
+PROGRAM_NAME := "ochre"
 BUILD_DIR := "products"
 VERSION := "0.1"
 

@@ -27,7 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6347C78A244E4D7E004A4EAD /* ocr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ocr; sourceTree = BUILT_PRODUCTS_DIR; };
+		6347C78A244E4D7E004A4EAD /* ochre */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ochre; sourceTree = BUILT_PRODUCTS_DIR; };
 		6347C79E244E4E5B004A4EAD /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
 		F414E18328F85980009F98F4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F414E18428F85A1B009F98F4 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		6347C78B244E4D7E004A4EAD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6347C78A244E4D7E004A4EAD /* ocr */,
+				6347C78A244E4D7E004A4EAD /* ochre */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,9 +124,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6347C789244E4D7E004A4EAD /* ocr */ = {
+		6347C789244E4D7E004A4EAD /* ochre */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6347C791244E4D7E004A4EAD /* Build configuration list for PBXNativeTarget "ocr" */;
+			buildConfigurationList = 6347C791244E4D7E004A4EAD /* Build configuration list for PBXNativeTarget "ochre" */;
 			buildPhases = (
 				6347C786244E4D7E004A4EAD /* Sources */,
 				6347C787244E4D7E004A4EAD /* Frameworks */,
@@ -136,9 +136,9 @@
 			);
 			dependencies = (
 			);
-			name = ocr;
+			name = ochre;
 			productName = ocrImage;
-			productReference = 6347C78A244E4D7E004A4EAD /* ocr */;
+			productReference = 6347C78A244E4D7E004A4EAD /* ochre */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -155,7 +155,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6347C785244E4D7E004A4EAD /* Build configuration list for PBXProject "ocr" */;
+			buildConfigurationList = 6347C785244E4D7E004A4EAD /* Build configuration list for PBXProject "ochre" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -168,7 +168,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6347C789244E4D7E004A4EAD /* ocr */,
+				6347C789244E4D7E004A4EAD /* ochre */,
 			);
 		};
 /* End PBXProject section */
@@ -310,7 +310,7 @@
 				DEVELOPMENT_TEAM = 5WX26Y89JP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = org.sveinbjorn.ocr;
+				PRODUCT_BUNDLE_IDENTIFIER = org.sveinbjorn.ochre;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -318,13 +318,13 @@
 		6347C793244E4D7E004A4EAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 5WX26Y89JP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = org.sveinbjorn.ocr;
+				PRODUCT_BUNDLE_IDENTIFIER = org.sveinbjorn.ochre;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -332,7 +332,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6347C785244E4D7E004A4EAD /* Build configuration list for PBXProject "ocr" */ = {
+		6347C785244E4D7E004A4EAD /* Build configuration list for PBXProject "ochre" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6347C78F244E4D7E004A4EAD /* Debug */,
@@ -341,7 +341,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6347C791244E4D7E004A4EAD /* Build configuration list for PBXNativeTarget "ocr" */ = {
+		6347C791244E4D7E004A4EAD /* Build configuration list for PBXNativeTarget "ochre" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6347C792244E4D7E004A4EAD /* Debug */,

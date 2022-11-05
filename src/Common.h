@@ -1,5 +1,5 @@
 /*
-    ocr - macOS Optical Character Recognition via the command line
+    ochre - macOS Optical Character Recognition via the command line
 
     Copyright (c) 2022 Sveinbjorn Thordarson <sveinbjorn@sveinbjorn.org>
 
@@ -18,7 +18,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define PROGRAM_NAME        @"ocr"
+#define PROGRAM_NAME        @"ochre"
 #define PROGRAM_VERSION     @"0.1"
 #define PROGRAM_AUTHOR      @"Sveinbjorn Thordarson"
 

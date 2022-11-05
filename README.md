@@ -1,26 +1,26 @@
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Language](https://img.shields.io/badge/language-objective--c-lightgrey)]()
-[![Release](https://shields.io/github/v/release/sveinbjornt/ocr?display_name=tag)]()
-[![Build](https://github.com/sveinbjornt/ocr/actions/workflows/macos.yml/badge.svg)]()
+[![Release](https://shields.io/github/v/release/sveinbjornt/ochre?display_name=tag)]()
+[![Build](https://github.com/sveinbjornt/ochre/actions/workflows/macos.yml/badge.svg)]()
 
-# ocr
+# ochre
 
-[//]: # (<img src="icon.png" width="168" height="168" alt="ocr" style="float: right; margin-left: 20px; margin-bottom: 20px;" align="right">)
+[//]: # (<img src="icon.png" width="168" height="168" alt="ochre" style="float: right; margin-left: 20px; margin-bottom: 20px;" align="right">)
 
 *This project is a work in progress. Nothing works. Binaries still unavailable.*
 
 ### macOS optical character recognition via the command line
 
-`ocr` is a command line interface for the built-in optical character recognition capabilities in macOS.
+`ochre` is a command line interface for the built-in optical character recognition capabilities in macOS.
 
-See the [man page](https://sveinbjorn.org/files/manpages/ocr.1.html) for further details.
+See the [man page](https://sveinbjorn.org/files/manpages/ochre.1.html) for further details.
 
 ## Download
 
-`ocr` is free, open source software written in Objective-C. The code is freely
-[available](https://github.com/sveinbjornt/ocr) on GitHub.
+`ochre` is free, open source software written in Objective-C. The code is freely
+[available](https://github.com/sveinbjornt/ochre) on GitHub.
 
-* **[⇩ Download ocr 0.1](https://sveinbjorn.org/files/software/ocr.zip)** 
+* **[⇩ Download ochre 0.1](https://sveinbjorn.org/files/software/ochre.zip)** 
 (Intel/ARM 64-bit, macOS 10.15 or later, ~50 KB)
 
 ## Installation
@@ -53,7 +53,7 @@ bash test/test.sh
 
 ## BSD License 
 
-Copyright (c) 2022 Sveinbjorn Thordarson &lt;<a href="mailto:sveinbjorn@sveinbjorn.org">sveinbjorn@sveinbjorn.org</a>&gt;
+Copyright (c) 2022 Sveinbjorn Thordarson &lt;<a href="mailto:sveinbjorn@sveinbjorn.org">sveinbjorn@sveinbjorn.org</a>&gt;  
 Copyright (c) 2020 David Phillip Oster
 
 Redistribution and use in source and binary forms, with or without modification,

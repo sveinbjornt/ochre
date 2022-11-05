@@ -1,5 +1,5 @@
 /*
-    ocr - macOS Optical Character Recognition via the command line
+    ochre - macOS Optical Character Recognition via the command line
 
     Copyright (c) 2022 Sveinbjorn Thordarson <sveinbjorn@sveinbjorn.org>
 

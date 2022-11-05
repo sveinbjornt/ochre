@@ -8,7 +8,7 @@ abs_path_to_enclosing_dir () {
 }
 
 TEST_ROOT=$(abs_path_to_enclosing_dir $0)
-BIN_PATH="products/ocr"
+BIN_PATH="products/ochre"
 
 test_ocr_file() {
     OUTPUT=$("$BIN_PATH" "$1")
