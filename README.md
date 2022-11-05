@@ -53,7 +53,8 @@ bash test/test.sh
 
 ## BSD License 
 
-Copyright (c) 2022 Sveinbjorn Thordarson &lt;<a href="mailto:sveinbjorn@sveinbjorn.org">sveinbjorn@sveinbjorn.org</a>&gt;  
+Copyright (c) 2022 Sveinbjorn Thordarson
+&lt;<a href="mailto:sveinbjorn@sveinbjorn.org">sveinbjorn@sveinbjorn.org</a>&gt;  
 Copyright (c) 2020 David Phillip Oster
 
 Redistribution and use in source and binary forms, with or without modification,

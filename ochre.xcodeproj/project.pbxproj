@@ -34,6 +34,8 @@
 		F44B4BA22916F82700159E1A /* french.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = french.png; sourceTree = "<group>"; };
 		F44B4BA32916F82700159E1A /* english.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = english.png; sourceTree = "<group>"; };
 		F44B4BA42916F96C00159E1A /* install.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = install.sh; sourceTree = "<group>"; };
+		F44B4BA529170A4100159E1A /* ochre.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ochre.1; sourceTree = "<group>"; };
+		F44B4BA629170A4100159E1A /* ochre.1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ochre.1.html; sourceTree = "<group>"; };
 		F47FA1BA290C59C200914395 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		F47FA1BB290C59C200914395 /* BKSOCRBoss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSOCRBoss.h; sourceTree = "<group>"; };
 		F47FA1BC290C59C200914395 /* BKSTextPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSTextPiece.h; sourceTree = "<group>"; };
@@ -43,10 +45,8 @@
 		F47FA1C0290C59C200914395 /* BKSTextPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKSTextPiece.m; sourceTree = "<group>"; };
 		F47FA1C5290C5CD400914395 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		F47FA1C6290C5CD400914395 /* man2html.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = man2html.sh; sourceTree = "<group>"; };
-		F47FA1C7290C5CD400914395 /* ocr.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ocr.1; sourceTree = "<group>"; };
 		F47FA1C9290C5CD500914395 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47FA1CA290C6F8200914395 /* macos.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = macos.yml; path = .github/workflows/macos.yml; sourceTree = "<group>"; };
-		F47FA1CB290C6FCE00914395 /* ocr.1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ocr.1.html; sourceTree = "<group>"; };
 		F47FA1CF290C706400914395 /* test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = test.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,8 +70,8 @@
 				F47FA1C5290C5CD400914395 /* icon.png */,
 				F414E18428F85A1B009F98F4 /* Makefile */,
 				F44B4BA42916F96C00159E1A /* install.sh */,
-				F47FA1C7290C5CD400914395 /* ocr.1 */,
-				F47FA1CB290C6FCE00914395 /* ocr.1.html */,
+				F44B4BA529170A4100159E1A /* ochre.1 */,
+				F44B4BA629170A4100159E1A /* ochre.1.html */,
 				F47FA1C6290C5CD400914395 /* man2html.sh */,
 				F47FA1C9290C5CD500914395 /* Info.plist */,
 				F47FA1B9290C59C200914395 /* src */,
@@ -319,6 +319,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 5WX26Y89JP;
