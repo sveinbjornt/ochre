@@ -36,6 +36,7 @@
 		F44B4BA42916F96C00159E1A /* install.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = install.sh; sourceTree = "<group>"; };
 		F44B4BA529170A4100159E1A /* ochre.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ochre.1; sourceTree = "<group>"; };
 		F44B4BA629170A4100159E1A /* ochre.1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ochre.1.html; sourceTree = "<group>"; };
+		F44B4BA72918065C00159E1A /* ochre.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ochre.entitlements; sourceTree = "<group>"; };
 		F47FA1BA290C59C200914395 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		F47FA1BB290C59C200914395 /* BKSOCRBoss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSOCRBoss.h; sourceTree = "<group>"; };
 		F47FA1BC290C59C200914395 /* BKSTextPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSTextPiece.h; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		6347C781244E4D7E004A4EAD = {
 			isa = PBXGroup;
 			children = (
+				F44B4BA72918065C00159E1A /* ochre.entitlements */,
 				F47FA1CA290C6F8200914395 /* macos.yml */,
 				F414E18328F85980009F98F4 /* README.md */,
 				F47FA1C5290C5CD400914395 /* icon.png */,
@@ -304,12 +306,15 @@
 		6347C792244E4D7E004A4EAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ochre.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 5WX26Y89JP;
 				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.sveinbjorn.ochre;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -318,13 +323,16 @@
 		6347C793244E4D7E004A4EAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ochre.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 5WX26Y89JP;
 				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.sveinbjorn.ochre;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
