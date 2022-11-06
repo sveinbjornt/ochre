@@ -7,7 +7,7 @@
 
 <img src="icon.png" width="168" height="168" alt="ochre" style="float: right; margin-left: 20px; margin-bottom: 20px;" align="right">
 
-*This project is a work in progress. Nothing works. Binaries still unavailable.*
+*This project is a work in progress. Nothing works. Links are broken. Binaries still unavailable.*
 
 ### macOS optical character recognition via the command line
 
@@ -37,11 +37,24 @@ This will install the binary into `/usr/local/bin` and the man page into
 
 ## Usage
 
-TBD
+```
+ochre path/to/image_with_english_text.png
+```
+
+```
+ochre -l fr-FR path/to/image_with_french_text.jpg
+```
 
 ## Build
 
-TBD
+To build `ochre` from source, run the following command from the repository root
+(requires Xcode command line build tools):
+
+```
+make build_unsigned
+```
+
+The resulting binary is created in `products/`.
 
 ## Test
 
@@ -54,7 +67,7 @@ bash test/test.sh
 ## BSD License 
 
 Copyright (c) 2022 Sveinbjorn Thordarson
-&lt;<a href="mailto:sveinbjorn@sveinbjorn.org">sveinbjorn@sveinbjorn.org</a>&gt;  
+&lt;[sveinbjorn@sveinbjorn.org](mailto:sveinbjorn@sveinbjorn.org)&gt;  
 Copyright (c) 2020 David Phillip Oster
 
 Redistribution and use in source and binary forms, with or without modification,

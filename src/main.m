@@ -98,6 +98,8 @@ int main(int argc, const char * argv[]) {
         exit(EXIT_FAILURE);
     }
     
+    NSString *language = DEFAULT_LOCALE;
+    
     // Parse arguments
     int optch;
     int long_index = 0;
@@ -107,7 +109,7 @@ int main(int argc, const char * argv[]) {
             
             // Set language (i.e. locale) for speech recognition
             case 'l':
-                //language = @(optarg);
+                language = @(optarg);
                 break;
             
             // Print version
@@ -138,6 +140,10 @@ int main(int argc, const char * argv[]) {
     while (optind < argc) {
         NSString *path = [fm stringWithFileSystemRepresentation:argv[optind]
                                                          length:strlen(argv[optind])];
+        if (path == nil) {
+            NSPrintErr(@"Unable to process file: %s", argv[optind]);
+            continue;
+        }
         [imageFiles addObject:path];
         optind += 1;
     }
