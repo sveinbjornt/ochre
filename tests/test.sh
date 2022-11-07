@@ -27,5 +27,5 @@ test_ocr_file "${EN_PNG_PATH}" "The rain in Spain stays mainly in the plain."
 # FR_PNG_PATH="$TEST_ROOT/french.png"
 # test_ocr_file $FR_PNG_PATH
 
-echo "Tests OK"
+echo "Tests PASSING"
 exit 0

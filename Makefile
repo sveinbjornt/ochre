@@ -46,7 +46,7 @@ size:
 
 runtests:
 	@echo "Running tests"
-	@bash "test/test.sh"
+	@bash "tests/test.sh"
 
 clean:
 	xcodebuild -project "$(XCODE_PROJ)" clean

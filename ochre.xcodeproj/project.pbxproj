@@ -31,8 +31,6 @@
 		6347C79E244E4E5B004A4EAD /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
 		F414E18328F85980009F98F4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F414E18428F85A1B009F98F4 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		F44B4BA22916F82700159E1A /* french.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = french.png; sourceTree = "<group>"; };
-		F44B4BA32916F82700159E1A /* english.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = english.png; sourceTree = "<group>"; };
 		F44B4BA42916F96C00159E1A /* install.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = install.sh; sourceTree = "<group>"; };
 		F44B4BA529170A4100159E1A /* ochre.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ochre.1; sourceTree = "<group>"; };
 		F44B4BA629170A4100159E1A /* ochre.1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ochre.1.html; sourceTree = "<group>"; };
@@ -48,7 +46,9 @@
 		F47FA1C6290C5CD400914395 /* man2html.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = man2html.sh; sourceTree = "<group>"; };
 		F47FA1C9290C5CD500914395 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47FA1CA290C6F8200914395 /* macos.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = macos.yml; path = .github/workflows/macos.yml; sourceTree = "<group>"; };
-		F47FA1CF290C706400914395 /* test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = test.sh; sourceTree = "<group>"; };
+		F4EF3C1729193BE2002E8629 /* french.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = french.png; sourceTree = "<group>"; };
+		F4EF3C1829193BE2002E8629 /* test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = test.sh; sourceTree = "<group>"; };
+		F4EF3C1929193BE2002E8629 /* english.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = english.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,7 @@
 				F47FA1C6290C5CD400914395 /* man2html.sh */,
 				F47FA1C9290C5CD500914395 /* Info.plist */,
 				F47FA1B9290C59C200914395 /* src */,
-				F47FA1CC290C706400914395 /* test */,
+				F4EF3C1629193BE2002E8629 /* tests */,
 				6347C79D244E4E5A004A4EAD /* Frameworks */,
 				6347C78B244E4D7E004A4EAD /* Products */,
 			);
@@ -113,14 +113,14 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		F47FA1CC290C706400914395 /* test */ = {
+		F4EF3C1629193BE2002E8629 /* tests */ = {
 			isa = PBXGroup;
 			children = (
-				F47FA1CF290C706400914395 /* test.sh */,
-				F44B4BA32916F82700159E1A /* english.png */,
-				F44B4BA22916F82700159E1A /* french.png */,
+				F4EF3C1829193BE2002E8629 /* test.sh */,
+				F4EF3C1929193BE2002E8629 /* english.png */,
+				F4EF3C1729193BE2002E8629 /* french.png */,
 			);
-			path = test;
+			path = tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
