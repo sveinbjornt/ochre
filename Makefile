@@ -3,7 +3,7 @@
 XCODE_PROJ := "ochre.xcodeproj"
 PROGRAM_NAME := "ochre"
 BUILD_DIR := "products"
-VERSION := "0.1"
+VERSION := "0.1.0"
 
 all: clean build_unsigned
 

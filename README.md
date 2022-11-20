@@ -20,7 +20,7 @@ See the [man page](https://sveinbjorn.org/files/manpages/ochre.1.html) for furth
 `ochre` is free, open source software written in Objective-C. The code is freely
 [available](https://github.com/sveinbjornt/ochre) on GitHub.
 
-* **[⇩ Download ochre 0.1](https://sveinbjorn.org/files/software/ochre.zip)** 
+* **[⇩ Download ochre 0.1.0](https://sveinbjorn.org/files/software/ochre.zip)** 
 (Intel/ARM 64-bit, macOS 10.15 or later, ~50 KB)
 
 ## Installation
