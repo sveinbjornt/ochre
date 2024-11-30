@@ -1,7 +1,7 @@
 /*
     ochre - macOS Optical Character Recognition via the command line
 
-    Copyright (c) 2022 Sveinbjorn Thordarson <sveinbjorn@sveinbjorn.org>
+    Copyright (c) 2022-2023 Sveinbjorn Thordarson <sveinbjorn@sveinbjorn.org>
     Adapted from code Copyright (c) 2020 David Phillip Oster.
 
     Redistribution and use in source and binary forms, with or without modification,
@@ -73,12 +73,13 @@ static void PrintVersion(void);
 static void PrintHelp(void);
 static void ocr(NSString *path);
 
-static const char optstring[] = "l:hv";
+static const char optstring[] = "l:jhv";
 
 static struct option long_options[] = {
     
     // Specify language (locale) for OCR
     {"language",                  required_argument,  0, 'l'},
+    {"json",                      no_argument,        0, 'j'},
     
     {"help",                      no_argument,        0, 'h'},
     {"version",                   no_argument,        0, 'v'},
