@@ -11,7 +11,9 @@
 
 ### macOS optical character recognition via the command line
 
-`ochre` is a command line interface for the built-in optical character recognition (OCR) capabilities in macOS.
+`ochre` is a command line interface for the built-in **o**ptical **ch**aracter **re**cognition (OCR) 
+capabilities in macOS. As of macOS BLABLA, Apple's operating system ships with excellent OCR. This 
+is an attempt to expose this functionality via the command line.
 
 See the [man page](https://sveinbjorn.org/files/manpages/ochre.1.html) for further details.
 
@@ -28,7 +30,7 @@ The code is freely [available on GitHub](https://github.com/sveinbjornt/ochre).
 After downloading and expanding the archive, change to the resulting directory and run
 the following command:
 
-```
+```bash
 bash install.sh
 ```
 
@@ -37,11 +39,11 @@ This will install the binary into `/usr/local/bin` and the man page into
 
 ## Usage
 
-```
+```bash
 ochre path/to/image_with_english_text.png
 ```
 
-```
+```bash
 ochre -l fr-FR path/to/image_with_french_text.jpg
 ```
 
@@ -50,7 +52,7 @@ ochre -l fr-FR path/to/image_with_french_text.jpg
 To build `ochre` from source, run the following command from the repository root
 (requires Xcode command line build tools):
 
-```
+```bash
 make build_unsigned
 ```
 
@@ -60,13 +62,13 @@ The resulting binary is created in `products/`.
 
 To run tests on the built command line tool, execute the following command from the repository root:
 
-```
+```bash
 bash test/test.sh
 ```
 
 ## BSD License 
 
-Copyright (c) 2022-2025 Sveinbjorn Thordarson
+Copyright (c) 2022-2025 Sveinbjorn Thordarson  
 &lt;[sveinbjorn@sveinbjorn.org](mailto:sveinbjorn@sveinbjorn.org)&gt;  
 Copyright (c) 2020 David Phillip Oster
 

@@ -219,7 +219,7 @@ void ocr(NSString *path) {
 
 #pragma mark -
 
-static BOOL IsRightOSVersion() {
+static BOOL IsRightOSVersion(void) {
     // The OCR API wasn't introduced until macOS 10.15
     NSOperatingSystemVersion osVersion = {0};
     osVersion.majorVersion = 10;
