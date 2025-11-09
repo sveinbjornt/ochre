@@ -33,6 +33,7 @@
 		F414E18428F85A1B009F98F4 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		F43056542EC09F4D00360103 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		F43056552EC09F7700360103 /* CHANGES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGES.md; sourceTree = "<group>"; };
+		F43056562EC0CE0600360103 /* spanish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spanish.png; sourceTree = "<group>"; };
 		F44B4BA42916F96C00159E1A /* install.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = install.sh; sourceTree = "<group>"; };
 		F44B4BA529170A4100159E1A /* ochre.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ochre.1; sourceTree = "<group>"; };
 		F44B4BA629170A4100159E1A /* ochre.1.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ochre.1.html; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 				F4EF3C1929193BE2002E8629 /* english.png */,
 				F4EF3C1729193BE2002E8629 /* french.png */,
 				F467F3872DBEAB8C009C1C1C /* german.png */,
+				F43056562EC0CE0600360103 /* spanish.png */,
 			);
 			path = tests;
 			sourceTree = "<group>";

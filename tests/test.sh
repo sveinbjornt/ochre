@@ -33,5 +33,9 @@ echo "Testing German"
 DE_PNG_PATH="$TEST_ROOT/german.png"
 test_ocr_file $DE_PNG_PATH "Die Walküre: „Wer meines Speeres Spitze fürchtet\""
 
+echo "Testing Spanish"
+ES_PNG_PATH="$TEST_ROOT/spanish.png"
+test_ocr_file $ES_PNG_PATH "método DE ESPAÑOL"
+
 echo "ALL TESTS PASSING"
 exit 0
