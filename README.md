@@ -11,7 +11,7 @@
 ### macOS optical character recognition via the command line
 
 `ochre` is a command line interface for the built-in **o**ptical **ch**aracter **re**cognition
-(OCR) capabilities in macOS. As of macOS BLABLA, Apple's operating system ships with excellent
+(OCR) capabilities in macOS. As of macOS 10.15, Apple's operating system ships with excellent
 OCR for a variety of written languages. This is an attempt to expose this functionality via
 the command line since no such tool is provided Apple.
 

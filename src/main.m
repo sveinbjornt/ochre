@@ -155,30 +155,32 @@ int main(int argc, const char * argv[]) {
         optind += 1;
     }
     
-    //NSPrint(imageFiles[0]);
-    ocr(imageFiles[0]);
-    
+    for (NSString *imgFilePath in imageFiles) {
+        NSPrint(@"%@:", imgFilePath);
+        ocr(imgFilePath);
+    }
     return EXIT_SUCCESS;
 }
     
 void ocr(NSString *path) {
-    BKSOCRBoss *boss = [[BKSOCRBoss alloc] init];
-
     NSURL *url = [NSURL fileURLWithPath:path];
-    if (nil == url) {
+    if (url == nil) {
         NSPrintErr(@"Not found: %@", path);
         return;
     }
-
+    
     NSImage *image = [[NSImage alloc] initWithContentsOfURL:url];
     if (nil == image) {
         NSPrintErr(@"Not a supported image format: %@", path);
         return;
     }
+    
+    BKSOCRBoss *boss = [[BKSOCRBoss alloc] init];
 
     NSError *error = nil;
     NSArray<BKSTextPiece *> *pieces = [boss recognizeImageURL:url error:&error];
-    if (pieces) {
+
+    if ([pieces count]) {
         NSMutableArray<BKSTextPiece *> *sortPieces = [pieces mutableCopy];
         // Sort by bottomRight.x to find the median.
         [sortPieces sortUsingFunction:byEndX context:NULL];

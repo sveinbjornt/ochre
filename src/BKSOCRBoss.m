@@ -31,7 +31,6 @@
 */
 
 #import "BKSOCRBoss.h"
-
 #import "BKSTextPiece.h"
 
 #import <Vision/Vision.h>
@@ -52,7 +51,7 @@ static NSString *const kBKSAppDomain = @"BKSAppDomain";
     __weak typeof(self) weakSelf = self;
     VNRecognizeTextRequest *textRequest =
         [[VNRecognizeTextRequest alloc] initWithCompletionHandler:^(VNRequest *request, NSError *error) {
-          [weakSelf handleTextRequst:request
+          [weakSelf handleTextRequest:request
                                error:error
                         continuation:^(NSArray *_Nullable idx, NSError *_Nullable error) {
                           pieces = idx;
@@ -76,9 +75,9 @@ static NSString *const kBKSAppDomain = @"BKSAppDomain";
     return pieces;
 }
 
-- (void)handleTextRequst:(VNRequest *)request
-                   error:(NSError *)error
-            continuation:(void (^)(NSArray *_Nullable idx, NSError *_Nullable error))continuation
+- (void)handleTextRequest:(VNRequest *)request
+                    error:(NSError *)error
+             continuation:(void (^)(NSArray *_Nullable idx, NSError *_Nullable error))continuation
     API_AVAILABLE(macos(10.15)) {
     if (error) {
         continuation(nil, error);

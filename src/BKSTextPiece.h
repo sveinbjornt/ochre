@@ -36,7 +36,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Use to hold one line of text returned from the BKSOCRBoss :
 /// Coordinate system is in a ratio to the image size. Y=0 is the bottom left.
+
 @interface BKSTextPiece : NSObject
+
 @property NSString *text;
 @property(nonatomic) CGPoint topLeft;
 @property(nonatomic) CGPoint topRight;
