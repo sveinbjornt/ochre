@@ -1,5 +1,4 @@
-TODO for hear command line tool:
+# TODO for `ochre` command line tool
 
-* Timeout option
-* Brew install option
+* Option to install directly from Homebrew instead of tap
 

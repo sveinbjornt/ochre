@@ -1,7 +1,7 @@
 /*
     ochre - macOS Optical Character Recognition via the command line
 
-    Copyright (c) 2022-2023 Sveinbjorn Thordarson <sveinbjorn@sveinbjorn.org>
+    Copyright (c) 2022-2025 Sveinbjorn Thordarson <sveinbjorn@sveinbjorn.org>
     Adapted from code Copyright (c) 2020 David Phillip Oster.
 
     Redistribution and use in source and binary forms, with or without modification,
@@ -79,6 +79,7 @@ static struct option long_options[] = {
     
     // Specify language (locale) for OCR
     {"language",                  required_argument,  0, 'l'},
+    // JSON output
     {"json",                      no_argument,        0, 'j'},
     
     {"help",                      no_argument,        0, 'h'},
@@ -100,6 +101,7 @@ int main(int argc, const char * argv[]) {
     }
     
     NSString *language = DEFAULT_LOCALE;
+    BOOL jsonOutput = NO;
     
     // Parse arguments
     int optch;
@@ -111,6 +113,10 @@ int main(int argc, const char * argv[]) {
             // Set language (i.e. locale) for speech recognition
             case 'l':
                 language = @(optarg);
+                break;
+            
+            case 'j':
+                jsonOutput = YES;
                 break;
             
             // Print version
@@ -184,35 +190,36 @@ void ocr(NSString *path) {
         NSMutableArray *a = [NSMutableArray array];
         for (NSUInteger i = 0; i < pieces.count; ++i) {
             BKSTextPiece *piece = pieces[i];
-            if (piece.text) {
-                // If the current line is indented, adjust the previous separator to be a paragaph separator.
-                if (2 < a.count && medianStartX * 1.1 < piece.bottomLeft.x && !hasInitialLowercase(piece.text)) {
-                    a[a.count - 1] = @"\n";
-                    [a addObject:piece.text];
-                    // Insert a paragraph separator if this is a short line, or at the end.
-                    if (piece.bottomRight.x < medianEndX * 0.9 || i + 1 == pieces.count) {
-                        [a addObject:@"\n"];
-                    } else {
-                        [a addObject:@" "];
-                    }
-                } else if (2 < a.count && [@" " isEqual:a.lastObject] && [a[a.count - 2] hasSuffix:@"-"]) {
-                    // If this isn't the first line of a paragraph, and the previous line ends in '-' assume
-                    // it is hypenated, and delete the hyphen and join.
-                    NSString *lastLine = a[a.count - 2];
-                    a[a.count - 2] = [[lastLine substringToIndex:lastLine.length - 1] stringByAppendingString:piece.text];
+            if (piece.text == nil) {
+                continue;
+            }
+            // If the current line is indented, adjust the previous separator to be a paragaph separator.
+            if (2 < a.count && medianStartX * 1.1 < piece.bottomLeft.x && !hasInitialLowercase(piece.text)) {
+                a[a.count - 1] = @"\n";
+                [a addObject:piece.text];
+                // Insert a paragraph separator if this is a short line, or at the end.
+                if (piece.bottomRight.x < medianEndX * 0.9 || i + 1 == pieces.count) {
+                    [a addObject:@"\n"];
                 } else {
-                    [a addObject:piece.text];
-                    // Insert a paragraph separator if this is a short line, or at the end.
-                    if (piece.bottomRight.x < medianEndX * 0.9 || i + 1 == pieces.count) {
-                        [a addObject:@"\n"];
-                    } else {
-                        [a addObject:@" "];
-                    }
+                    [a addObject:@" "];
+                }
+            } else if (2 < a.count && [@" " isEqual:a.lastObject] && [a[a.count - 2] hasSuffix:@"-"]) {
+                // If this isn't the first line of a paragraph, and the previous line ends in '-' assume
+                // it is hypenated, and delete the hyphen and join.
+                NSString *lastLine = a[a.count - 2];
+                a[a.count - 2] = [[lastLine substringToIndex:lastLine.length - 1] stringByAppendingString:piece.text];
+            } else {
+                [a addObject:piece.text];
+                // Insert a paragraph separator if this is a short line, or at the end.
+                if (piece.bottomRight.x < medianEndX * 0.9 || i + 1 == pieces.count) {
+                    [a addObject:@"\n"];
+                } else {
+                    [a addObject:@" "];
                 }
             }
         }
         NSString *all = [a componentsJoinedByString:@""];
-        printf("%s", [all UTF8String]);
+        NSPrint(all);
     }
 }
 
@@ -234,11 +241,12 @@ static void PrintVersion(void) {
 static void PrintHelp(void) {
     PrintVersion();
     NSPrint(@"\n\
-%@ [-s] [-l lang] file ...\n\
+%@ [-l lang] file ...\n\
 \n\
 Options:\n\
 \n\
     -l --language           Specify speech recognition language\n\
+    -j --json               Output JSON\n\
 \n\
     -h --help               Prints help\n\
     -v --version            Prints program name and version\n\

@@ -1,4 +1,4 @@
-# Makefile for Sloth app
+# Makefile for ochre command line tool
 
 XCODE_PROJ := "ochre.xcodeproj"
 PROGRAM_NAME := "ochre"
@@ -7,15 +7,16 @@ VERSION := "0.1.0"
 
 all: clean build_unsigned
 
-release: clean build_signed archive size
+release: clean build_signed archive man size
 
 test: clean build_unsigned runtests
 
 build_unsigned:
-	mkdir -p $(BUILD_DIR)
+	@mkdir -p $(BUILD_DIR)
+	@xattr -w com.apple.xcode.CreatedByBuildSystem true $(BUILD_DIR)
 	xcodebuild	-project "$(XCODE_PROJ)" \
 	            -target "$(PROGRAM_NAME)" \
-	            -configuration "Debug" \
+	            -configuration "Release" \
 	            CONFIGURATION_BUILD_DIR="$(BUILD_DIR)" \
 	            CODE_SIGN_IDENTITY="" \
 	            CODE_SIGNING_REQUIRED=NO \
@@ -23,7 +24,8 @@ build_unsigned:
 	            build
 
 build_signed:
-	mkdir -p $(BUILD_DIR)
+	@mkdir -p $(BUILD_DIR)
+	@xattr -w com.apple.xcode.CreatedByBuildSystem true $(BUILD_DIR)
 	xcodebuild  -parallelizeTargets \
 	            -project "$(XCODE_PROJ)" \
 	            -target "$(PROGRAM_NAME)" \
@@ -44,6 +46,9 @@ size:
 	@stat -f %z "$(BUILD_DIR)/$(PROGRAM_NAME)"
 	@echo "Archive size:"
 	@cd "$(BUILD_DIR)"; du -hs "$(PROGRAM_NAME)-$(VERSION).zip"
+
+man:
+	@bash man2html.sh
 
 runtests:
 	@echo "Running tests"
