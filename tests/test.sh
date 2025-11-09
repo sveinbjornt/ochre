@@ -14,7 +14,6 @@ BIN_PATH="products/ochre"
 
 test_ocr_file() {
     OUTPUT=$("$BIN_PATH" "$1")
-
     if [ "$OUTPUT" != "$2" ]; then
         echo "Unexpected output for '$1': ${OUTPUT}"
         exit 1

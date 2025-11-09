@@ -39,15 +39,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BKSOCRBoss : NSObject
 
 /// OCR the image on the current thread returning an array of BKSTextPieces else nil.
-/// Run this on a separate thread!
-///
-/// requires macOS 10.15
 ///
 /// @param url The image, in a file to OCR
 /// @param error Assigned to if an error occurred
 /// @return The array of recognized pieces else nil.
 - (nullable NSArray<BKSTextPiece *> *)recognizeImageURL:(NSURL *)url
-                                                  error:(NSError *__autoreleasing  _Nullable *)error API_AVAILABLE(macos(10.15));
+                                                  error:(NSError *__autoreleasing  _Nullable *)error;
 
 @end
 

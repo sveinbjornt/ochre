@@ -30,6 +30,7 @@
     POSSIBILITY OF SUCH DAMAGE.
 */
 
+#import "Common.h"
 #import "BKSOCRBoss.h"
 #import "BKSTextPiece.h"
 
@@ -49,6 +50,7 @@ static NSString *const kBKSAppDomain = @"BKSAppDomain";
     __block NSArray<BKSTextPiece *> *pieces = nil;
     __block NSError *__autoreleasing _Nullable *error1p = errorp;
     __weak typeof(self) weakSelf = self;
+    
     VNRecognizeTextRequest *textRequest =
         [[VNRecognizeTextRequest alloc] initWithCompletionHandler:^(VNRequest *request, NSError *error) {
           [weakSelf handleTextRequest:request
@@ -65,7 +67,7 @@ static NSString *const kBKSAppDomain = @"BKSAppDomain";
         handler = [[VNImageRequestHandler alloc] initWithURL:url options:@{}];
         [handler performRequests:@[ textRequest ] error:errorp];
     }
-    if (nil == handler && errorp) {
+    if (handler == nil && errorp) {
         NSString *desc = @"Couldn't allocate handler";
         NSError *err = [NSError errorWithDomain:kBKSAppDomain
                                            code:kBKSErrorOCR
@@ -77,8 +79,7 @@ static NSString *const kBKSAppDomain = @"BKSAppDomain";
 
 - (void)handleTextRequest:(VNRequest *)request
                     error:(NSError *)error
-             continuation:(void (^)(NSArray *_Nullable idx, NSError *_Nullable error))continuation
-    API_AVAILABLE(macos(10.15)) {
+             continuation:(void (^)(NSArray *_Nullable idx, NSError *_Nullable error))continuation{
     if (error) {
         continuation(nil, error);
     } else if ([request isKindOfClass:[VNRecognizeTextRequest class]]) {
@@ -90,7 +91,7 @@ static NSString *const kBKSAppDomain = @"BKSAppDomain";
                 VNRecognizedTextObservation *textO = (VNRecognizedTextObservation *)rawResult;
                 NSArray<VNRecognizedText *> *text1 = [textO topCandidates:1];
                 if (text1.count) {
-                    BKSTextPiece *textPiece = [[BKSTextPiece alloc] init];
+                    BKSTextPiece *textPiece = [BKSTextPiece new];
                     textPiece.text = text1.firstObject.string;
                     textPiece.topLeft = textO.topLeft;
                     textPiece.topRight = textO.topRight;
@@ -99,7 +100,7 @@ static NSString *const kBKSAppDomain = @"BKSAppDomain";
                     [pieces addObject:textPiece];
                 }
             } else {
-                NSLog(@"E %@", rawResult);
+                DLog(@"E %@", rawResult);
             }
         }
         continuation(pieces, nil);

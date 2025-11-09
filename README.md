@@ -6,6 +6,8 @@
 
 # ochre
 
+** WORK IN PROGRESS! **
+
 <img src="icon.png" width="168" height="168" alt="ochre" style="float: right;margin-left: 20px; margin-bottom: 20px;" align="right">
 
 ### macOS optical character recognition via the command line
@@ -51,13 +53,7 @@ brew install sveinbjornt/ochre/ochre
 Defaults to looking for English text:
 
 ```bash
-ochre path/to/image_with_english_text.png
-```
-
-To specify an alternative language (locale), e.g. French:
-
-```bash
-ochre -l fr-FR path/to/image_with_french_text.jpg
+ochre path/to/image_with_text.png
 ```
 
 ## Build

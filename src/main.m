@@ -76,9 +76,6 @@ static void ocr(NSString *path);
 static const char optstring[] = "l:jhv";
 
 static struct option long_options[] = {
-    
-    // Specify language (locale) for OCR
-    {"language",                  required_argument,  0, 'l'},
     // JSON output
     {"json",                      no_argument,        0, 'j'},
     
@@ -100,7 +97,6 @@ int main(int argc, const char * argv[]) {
         exit(EXIT_FAILURE);
     }
     
-    NSString *language = DEFAULT_LOCALE;
     BOOL jsonOutput = NO;
     
     // Parse arguments
@@ -109,12 +105,6 @@ int main(int argc, const char * argv[]) {
     
     while ((optch = getopt_long(argc, (char *const *)argv, optstring, long_options, &long_index)) != -1) {
         switch (optch) {
-            
-            // Set language (i.e. locale) for speech recognition
-            case 'l':
-                language = @(optarg);
-                break;
-            
             case 'j':
                 jsonOutput = YES;
                 break;
@@ -243,11 +233,10 @@ static void PrintVersion(void) {
 static void PrintHelp(void) {
     PrintVersion();
     NSPrint(@"\n\
-%@ [-l lang] file ...\n\
+%@ [-j] file ...\n\
 \n\
 Options:\n\
 \n\
-    -l --language           Specify speech recognition language\n\
     -j --json               Output JSON\n\
 \n\
     -h --help               Prints help\n\
