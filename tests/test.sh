@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Test binary by running various commands
 #
@@ -21,14 +21,17 @@ test_ocr_file() {
     fi
 }
 
+echo "Testing English"
 EN_PNG_PATH="$TEST_ROOT/english.png"
 test_ocr_file "${EN_PNG_PATH}" "The rain in Spain stays mainly in the plain."
 
+echo "Testing French"
 FR_PNG_PATH="$TEST_ROOT/french.png"
 test_ocr_file $FR_PNG_PATH "C'est une entrecôte"
 
+echo "Testing German"
 DE_PNG_PATH="$TEST_ROOT/german.png"
 test_ocr_file $DE_PNG_PATH "Die Walküre: „Wer meines Speeres Spitze fürchtet\""
 
-echo "Tests PASSING"
+echo "ALL TESTS PASSING"
 exit 0
