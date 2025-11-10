@@ -71,7 +71,7 @@ static NSComparisonResult byStartX(id _Nonnull obj1, id _Nonnull obj2, void *unu
 static BOOL IsRightOSVersion(void);
 static void PrintVersion(void);
 static void PrintHelp(void);
-static void ocr(NSString *path);
+static NSString * ocr(NSString *path);
 
 static const char optstring[] = "l:jhv";
 
@@ -145,27 +145,53 @@ int main(int argc, const char * argv[]) {
         optind += 1;
     }
     
+    NSMutableDictionary *jsonDict = [NSMutableDictionary new];
+    
     for (NSString *imgFilePath in imageFiles) {
-        NSPrint(@"%@:", imgFilePath);
-        ocr(imgFilePath);
+        NSString *text = ocr(imgFilePath);
+        if (!jsonOutput) {
+            if ([imageFiles count] > 1) {
+                NSPrint(@"%@:", imgFilePath);
+            }
+            NSPrint(text);
+        } else {
+            jsonDict[imgFilePath] = text;
+        }
     }
+    
+    if (jsonOutput) {
+        NSError *error;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonDict
+                                                           options:NSJSONWritingPrettyPrinted
+                                                             error:&error];
+
+        if (!jsonData) {
+            NSPrintErr(@"Got an error: %@", error);
+            exit(EXIT_FAILURE);
+        } else {
+            NSString *jsonString = [[NSString alloc] initWithData:jsonData
+                                                         encoding:NSUTF8StringEncoding];
+            NSPrint(jsonString);
+        }
+    }
+    
     return EXIT_SUCCESS;
 }
     
-void ocr(NSString *path) {
+NSString * ocr(NSString *path) {
     NSURL *url = [NSURL fileURLWithPath:path];
     if (url == nil) {
         NSPrintErr(@"Not found: %@", path);
-        return;
+        return nil;
     }
     
     NSImage *image = [[NSImage alloc] initWithContentsOfURL:url];
     if (nil == image) {
         NSPrintErr(@"Not a supported image format: %@", path);
-        return;
+        return nil;
     }
     
-    BKSOCRBoss *boss = [[BKSOCRBoss alloc] init];
+    BKSOCRBoss *boss = [BKSOCRBoss new];
 
     NSError *error = nil;
     NSArray<BKSTextPiece *> *pieces = [boss recognizeImageURL:url error:&error];
@@ -211,8 +237,9 @@ void ocr(NSString *path) {
             }
         }
         NSString *all = [a componentsJoinedByString:@""];
-        NSPrint(all);
+        return all;
     }
+    return nil;
 }
 
 
